@@ -16,18 +16,19 @@ Run the following command and follow the on-screen instructions. Use credentials
 az login --use-device-code
 ```
 
-
-
-## Install Required Packages  
-
-Next, install the Python packages needed to work with Microsoft Foundry and manage environment variables:  
+## Create .NET Console App
+In the workshop folder create a new dotnet console application project.
 
 ```shell
-pip install azure-identity
-pip install azure-ai-projects
-pip install azure-ai-agents==1.2.0b5
-pip install jsonref
-pip install python-dotenv
+dotnet new console -o pizzaagent
+```
+
+### Add NuGet Packages
+Since in this version we are going to use the Agent Framework, let's get that NuGet package installed:
+
+```shell
+cd pizzaagent
+dotnet add package Microsoft.Agents.AI.OpenAI --prerelease  
 ```
 
 
@@ -61,9 +62,14 @@ Replace `https://<your-foundry-resource>.services.ai.azure.com/api/projects/<you
 
 - Make sure there are **no spaces** around the `=` sign in the `.env` file.
 
+## Create a Basic Agent
+We'll now add code to Program.cs that defines and runs an agent.
 
+```csharp
 
-## Create a Basic Agent  
+```
+
+## Create a Basic Agent (Python) 
 
 We’ll now create a basic Python script that defines and runs an agent.  
 
